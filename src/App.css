@@ -1,0 +1,95 @@
+/* Global variables with fallbacks */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --font-family: system-ui, -apple-system, sans-serif;
+  --container-padding: 1rem;
+  --spacing-unit: 0.25rem;
+}
+
+/* Base styles with modern resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container styles with responsive design */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--container-padding);
+  width: 100%;
+}
+
+/* Utility classes for spacing */
+.mt-1 { margin-top: var(--spacing-unit); }
+.mb-1 { margin-bottom: var(--spacing-unit); }
+.mx-1 { margin-left: var(--spacing-unit); margin-right: var(--spacing-unit); }
+.px-1 { padding-left: var(--spacing-unit); padding-right: var(--spacing-unit); }
+
+
+/* Light Mode (Default) */
+body {
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-mode .hero-section,
+.dark-mode .section_contact {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;
+}
+
+.navbar.dark {
+  background: #333;
+  color: white;
+}
+
+/* Button */
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  background: #008000;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #006400;
+}
