@@ -75,7 +75,7 @@ function Footer() {
   );
 }
 
-<style jsx>{`
+<style>{`
   .mission-vision-wrapper {
     display: flex;
     justify-content: center; /* Centers the mission-vision div horizontally */

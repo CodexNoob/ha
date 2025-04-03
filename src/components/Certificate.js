@@ -55,16 +55,16 @@ function Certificate() {
     <section className="certificate-section" id="certificate">
       <Container>
         <h1 className="text-center my-2">Certificates</h1>
-        <Row className="justify-content-center g-4">
-          {certificates.map((certificate) => (
-            <Col key={certificate.id} xs={12} md={4} lg={4} className="d-flex justify-content-center">
-              <div className="certificate-card" onClick={() => handleCertificateClick(certificate)}>
-                <img src={certificate.image} alt={certificate.title} className="certificate-img" />
-                <h3 style={{ fontSize: '20px' }}>{certificate.title}</h3>
-              </div>
-            </Col>
-          ))}
-        </Row>
+              <Row className="justify-content-center g-3">
+        {certificates.map((certificate) => (
+          <Col key={certificate.id} xs={6} md={4} lg={4} className="d-flex justify-content-center">
+            <div className="certificate-card" onClick={() => handleCertificateClick(certificate)}>
+              <img src={certificate.image} alt={certificate.title} className="certificate-img" />
+              <h3 style={{ fontSize: '18px' }}>{certificate.title}</h3>
+            </div>
+          </Col>
+        ))}
+      </Row>
       </Container>
 
       {isPanelOpen && <div className="overlay" onClick={closePanel}></div>}
@@ -106,7 +106,7 @@ function Certificate() {
                 </Button>
                   <Button 
                     variant="dark" 
-                    className="carousel-btn right" 
+                    className="carousel-btn left" 
                     onClick={() => {
                       if (index < selectedCertificate.certs.length - 1) {
                         setIndex(index + 1);
@@ -124,7 +124,7 @@ function Certificate() {
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .certificate-section {
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           padding-top: 0;
@@ -159,6 +159,7 @@ function Certificate() {
           height: 100px;
           border-radius: 50%;
           margin-bottom: 10px;
+          margin-top: 10px;
         }
 
         .overlay {
@@ -238,6 +239,63 @@ function Certificate() {
           font-size: 15px;
           padding: 10px 5px;
         }
+
+        @media (max-width: 900px) {
+  .certificate-card {
+    width: 90%; /* Adjust card width */
+    min-height: 180px; /* Prevent text from overflowing */
+    padding: 10px;
+  }
+
+  .certificate-img {
+    max-width: 80px; /* Ensure image scales */
+    height: auto;
+  }
+
+  .certificate-card h3 {
+    font-size: 18px; /* Adjust font size for small screens */
+    text-align: center;
+    word-wrap: break-word;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 810px) {
+  .certificate-card {
+    width: 95%; /* Increase width for smaller screens */
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .certificate-img {
+    max-width: 70px; /* Ensure image does not overflow */
+  }
+
+  .certificate-card h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .certificate-card {
+    width: 100%; /* Ensure full width for small screens */
+    min-height: 180px;
+  }
+
+  .certificate-img {
+    max-width: 70px;
+    height: auto;
+  }
+
+  .certificate-card h3 {
+    font-size: 14px;
+  }
+}
+
+
       `}</style>
     </section>
   );

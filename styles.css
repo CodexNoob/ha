@@ -1,0 +1,10 @@
+body {
+  -webkit-text-size-adjust: 100%; /* For Chrome, Edge */
+  text-size-adjust: 100%; /* For broader browser support */
+}
+
+.some-element {
+  text-align: -webkit-match-parent; /* For older browsers */
+  text-align: inherit; /* Added for better compatibility */
+  text-align: match-parent; /* For Safari 15.4+ */
+}

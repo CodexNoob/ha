@@ -19,20 +19,22 @@ function NavBar() {
   }, [darkMode]);
 
   const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 80;
+  e.preventDefault();
+  const targetElement = document.getElementById(targetId);
+  const navbar = document.querySelector(".navbar");
+  const navbarHeight = navbar ? navbar.offsetHeight : 80; // Get navbar height dynamically
 
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - navbarHeight - 20,
-        behavior: "smooth",
-      });
-    }
+  if (targetElement) {
+    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get accurate position
+    window.scrollTo({
+      top: elementPosition - navbarHeight - 10, // Adjust based on navbar height
+      behavior: "smooth",
+    });
+  }
 
-    // Close navbar when a link is clicked (for mobile)
-    setExpanded(false);
-  };
+  setExpanded(false); // Close navbar on mobile
+};
+
 
   return (
     <Navbar
@@ -67,7 +69,7 @@ function NavBar() {
         </Navbar.Collapse>
       </Container>
 
-      <style jsx>{`
+      <style>{`
         /* Light Mode Navbar */
         .light-navbar {
           background: #ffffff;

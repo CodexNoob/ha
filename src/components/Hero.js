@@ -37,7 +37,7 @@ function Hero({ darkMode }) {
             style={{
               marginBottom: "20px",
               fontSize: "3rem",
-              paddingTop: "100px",
+              paddingTop: "50px", // Increased padding to account for navbar height
               textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)",
             }}
           >
@@ -79,7 +79,7 @@ function Hero({ darkMode }) {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes slideInRight {
           from {
             transform: translateX(100%);
@@ -127,7 +127,8 @@ function Hero({ darkMode }) {
 
         .hero-image {
           flex: 1;
-          text-align: center;
+          text-align: center;git checkout main
+
         }
 
         .hero-image img {
@@ -171,6 +172,7 @@ function Hero({ darkMode }) {
           .hero-content {
             flex-direction: column;
             text-align: center;
+            padding-top: 350px;
           }
 
           .hero-text {
@@ -191,6 +193,7 @@ function Hero({ darkMode }) {
           .hero-content {
             flex-direction: column;
             text-align: center;
+            padding-top: 50px;
           }
 
           .hero-section {

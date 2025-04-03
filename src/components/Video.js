@@ -63,7 +63,7 @@ function Video() {
           ))}
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
       .video-card {
   background: #fff;
   border-radius: 8px;

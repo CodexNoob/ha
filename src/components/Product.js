@@ -81,7 +81,7 @@ function Product({ darkMode }) {
       </div>
 
       {/* Styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideInLeft {
           from {
             transform: translateX(-100%);
@@ -172,23 +172,80 @@ function Product({ darkMode }) {
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .product-content {
             flex-direction: column;
             align-items: center;
+            text-align: center;
+            padding-top: 300px;
+          }
+
+          .features-benefits-container {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+          }
+
+          .features-benefits-list {
+            min-width: unset;
+            margin-bottom: 20px;
           }
 
           .product-images {
             flex-direction: column;
             align-items: center;
+            gap: 20px;
           }
 
           .product-img {
-            width: 80%;
+            max-width: 200px;
+            height: auto;
+            margin-left: 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .product-section {
+            padding-left: 5%;
+            padding-right: 5%;
+          }
+          .product-content{
+          padding-top: 5px;
+          }
+
+          .product-img {
+            width: 100%;
+            max-width: 150px;
           }
 
           .features-benefits-container {
-            flex-direction: column;
+            gap: 20px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .product-section {
+            padding: 20px;
+          }
+
+          .product-content{
+          padding-top: 1px;
+          }
+
+          .product-img {
+            max-width: 120px;
+          }
+
+          .features-benefits-container {
+            gap: 10px;
+          }
+
+          .features-benefits-list {
+            font-size: 14px;
+          }
+
+          .product-text h2 {
+            font-size: 20px;
           }
         }
       `}</style>

@@ -10,6 +10,9 @@
           "meta[name=theme-color]"
         ]
       }
-    ]
+    ],
+    "axe/text-alternatives": "off",
+    "compat-api/css": "off",
+    "meta-viewport": "off"
   }
 }

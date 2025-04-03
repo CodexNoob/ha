@@ -108,7 +108,7 @@ function Contact() {
           </Col>
         </Row>
       </Container>
-      <style jsx>{`
+      <style>{`
       .section_contact{
       background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
       padding-top: 150px;

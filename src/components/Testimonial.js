@@ -3,6 +3,7 @@ import img1 from "../assets/imgs/logo.png";
 import img2 from "../assets/imgs/masinagorganic-removebg-preview.png";
 import img3 from "../assets/imgs/OIP.png";
 
+
 function Testimonial() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -29,14 +30,21 @@ function Testimonial() {
       role: "UX Designer",
     },
     {
-      name: "Emily Johnson",
+      name: "Bob Kally",
       quote: "Exceptional quality and great support.",
       image: img3,
       video: "https://www.youtube.com/embed/Uf4JAss1vEo",
       role: "UX Designer",
     },
     {
-      name: "Emily Johnson",
+      name: "Mark Nicolas",
+      quote: "Exceptional quality and great support.",
+      image: img3,
+      video: "https://www.youtube.com/embed/Uf4JAss1vEo",
+      role: "UX Designer",
+    },
+    {
+      name: "Mark Tahimik Lang",
       quote: "Exceptional quality and great support.",
       image: img3,
       video: "https://www.youtube.com/embed/Uf4JAss1vEo",
@@ -92,7 +100,7 @@ function Testimonial() {
         )}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .section_Testimonial {
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           padding-top: 0;
@@ -199,6 +207,20 @@ function Testimonial() {
           max-width: 600px;
           text-align: center;
         }
+          @media (max-width: 768px) and (min-height: 571px) {
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+  }
+
+  .col-md-4 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
       `}</style>
     </section>
   );
