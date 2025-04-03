@@ -305,7 +305,8 @@ function Protocol() {
           padding-top: 5px;
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           scroll-margin-top: 50px;
-          min-height: 100vh;
+          min-height: auto;
+          height: 100%
           overflow-x: hidden;
           display: flex;
           flex-direction: column;
@@ -314,7 +315,7 @@ function Protocol() {
         .modal-header .btn-close {
           margin-right: auto; /* Move the close button to the left */
           position: relative;
-          left: -10px;
+          left: 0;
         }
         .fruit-card {
           width: 240px;

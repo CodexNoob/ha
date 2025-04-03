@@ -27,7 +27,7 @@ function NavBar() {
   if (targetElement) {
     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get accurate position
     window.scrollTo({
-      top: elementPosition - navbarHeight - 10, // Adjust based on navbar height
+      top: elementPosition - navbarHeight - 50, // Adjust based on navbar height
       behavior: "smooth",
     });
   }
@@ -51,9 +51,9 @@ function NavBar() {
         <Navbar.Toggle
           aria-controls="navbarScroll"
           className="custom-toggle"
-          onClick={() => setExpanded(expanded ? false : true)} // Toggle navbar
+          onClick={() => setExpanded(!expanded)} // Toggle navbar
         />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" in={expanded}>
           <Nav className="me-auto nav-links">
             {navItems.map((item) => (
               <Nav.Link

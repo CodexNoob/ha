@@ -96,7 +96,8 @@ function Hero({ darkMode }) {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 100vh;
+          min-height: auto;
+          height: 100%;
           padding: 20px;
           background-color: rgb(255, 255, 255);
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
@@ -172,7 +173,7 @@ function Hero({ darkMode }) {
           .hero-content {
             flex-direction: column;
             text-align: center;
-            padding-top: 350px;
+            padding-top: 50px;
           }
 
           .hero-text {

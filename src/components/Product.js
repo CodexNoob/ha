@@ -177,7 +177,7 @@ function Product({ darkMode }) {
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding-top: 300px;
+            padding-top: 50px;
           }
 
           .features-benefits-container {

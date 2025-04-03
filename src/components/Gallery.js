@@ -162,7 +162,8 @@ const Gallery = () => {
           padding-top: 5px;
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           scroll-margin-top: 50px;
-          min-height: 100vh;
+          min-height: auto;
+          height: 100%;
           overflow-x: hidden;
           justify-content: center;
           align-items: center;
