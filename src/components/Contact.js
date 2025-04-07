@@ -112,7 +112,11 @@ function Contact() {
         .section_contact {
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           min-height: 100vh;
-          padding: 40px 15px;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         @media (max-width: 767px) {

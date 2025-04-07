@@ -6,9 +6,9 @@ function Hero({ darkMode }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const element = heroRef.current; // Store ref value in a variable
+    const element = heroRef.current;
 
-    if (!element) return; // Ensure element exists before proceeding
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -22,7 +22,7 @@ function Hero({ darkMode }) {
     return () => {
       observer.unobserve(element);
     };
-  }, []); // No need to include heroRef.current in dependencies
+  }, []);
 
   return (
     <section
@@ -37,29 +37,39 @@ function Hero({ darkMode }) {
             style={{
               marginBottom: "20px",
               fontSize: "3rem",
-              paddingTop: "50px", // Increased padding to account for navbar height
+              paddingTop: "50px",
               textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)",
             }}
           >
-            <span style={{ color: "hsl(122, 72.40%, 17.10%)",}}>Welcome to</span>
+            <span style={{ color: "hsl(122, 72.40%, 17.10%)" }}>Welcome to</span>
             <br />
             Masinag Organic
           </h1>
           <p className="fs-4">
-            Your trusted source for organic products. Experience the best nature
-            has to offer!
+            Your trusted source for organic products. Experience the best nature has to offer!
           </p>
           <button
             className="hero-btn"
-            style={{cursor: 'pointer',marrginTop: '50px', padding: '10px 20px', fontSize: '1rem', fontWeight: 'bold', backgroundColor: 'hsl(122, 72.40%, 17.10%)', color: 'white', border: '20px', borderRadius: '25px'}}
+            style={{
+              cursor: "pointer",
+              marginTop: "50px",
+              padding: "10px 20px",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              backgroundColor: "hsl(122, 72.40%, 17.10%)",
+              color: "white",
+              border: "20px",
+              borderRadius: "25px",
+            }}
             onClick={() => {
-              const contactSection = document.getElementById('contact');
-              const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+              const contactSection = document.getElementById("contact");
+              const navbarHeight =
+                document.querySelector(".navbar")?.offsetHeight || 80;
 
               if (contactSection) {
                 window.scrollTo({
                   top: contactSection.offsetTop - navbarHeight - 20,
-                  behavior: 'smooth',
+                  behavior: "smooth",
                 });
               }
             }}
@@ -90,7 +100,6 @@ function Hero({ darkMode }) {
             opacity: 1;
           }
         }
-
 
         .hero-section {
           display: flex;
@@ -129,8 +138,7 @@ function Hero({ darkMode }) {
 
         .hero-image {
           flex: 1;
-          text-align: center;git checkout main
-
+          text-align: center;
         }
 
         .hero-image img {
@@ -152,7 +160,7 @@ function Hero({ darkMode }) {
           text-align: center;
           margin-top: 10px;
           font-weight: bold;
-          color:hsl(122, 72.40%, 17.10%);
+          color: hsl(122, 72.40%, 17.10%);
           font-size: 1.5rem;
           text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
           text-transform: uppercase;
@@ -172,13 +180,13 @@ function Hero({ darkMode }) {
 
         @media (max-width: 1024px) {
           .hero-content {
-            flex-direction: column;
+            flex-direction: column-reverse; /* Hero image is above text */
             text-align: center;
             padding-top: 50px;
           }
 
           .hero-text {
-            max-width: 80%;
+            max-width: 100%;
             text-align: center;
           }
 
@@ -191,9 +199,29 @@ function Hero({ darkMode }) {
           }
         }
 
+        @media (min-width: 1025px) {
+          .hero-content {
+            flex-direction: row; /* Image and text side by side */
+            text-align: left;
+          }
+
+          .hero-text {
+            max-width: 50%;
+            text-align: left;
+          }
+
+          .hero-image img {
+            max-width: 400px;
+          }
+
+          .image-caption {
+            font-size: 1.5rem;
+          }
+        }
+
         @media (max-width: 768px) {
           .hero-content {
-            flex-direction: column;
+            flex-direction: column-reverse; /* Hero image is above text */
             text-align: center;
             padding-top: 50px;
           }

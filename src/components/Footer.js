@@ -28,7 +28,7 @@ function Footer() {
         <section className="container text-center mt-4">
           <div className="footer-columns">
             <div className="footer-col">
-              <h6 className="text-uppercase fw-bold mb-2">HANFORD</h6>
+              <h6 className="text-uppercase fw-bold mb-2" style={{fontSize: "20px"}}>HANFORD</h6>
               <div className="mission-vision-wrapper">
                 <div className="mission-vision">
                   <p>
