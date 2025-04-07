@@ -120,7 +120,7 @@ const Gallery = () => {
           ))}
         </div>
         <p 
-  style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', textAlign: 'center', marginTop: '20px', fontSize: '1.2rem' }} 
+  style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', textAlign: 'center', marginTop: '50px', fontSize: '1.2rem' }} 
   onClick={() => {
     setShowAll((prev) => {
       const newState = !prev;
@@ -162,13 +162,15 @@ const Gallery = () => {
           padding-top: 5px;
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           scroll-margin-top: 50px;
-          min-height: auto;
-          height: 100%;
+          min-height: 100vh; /* Adjusted for navbar height */
+          height: auto;
           overflow-x: hidden;
+          display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           margin-bottom: 0; /* Remove extra margin at the bottom */
-          padding-bottom: 0;
+          padding-bottom: 5px;
         }
 
 
@@ -211,7 +213,6 @@ const Gallery = () => {
 .see-more-btn {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
   background: none;
   color: black;
   border: none;

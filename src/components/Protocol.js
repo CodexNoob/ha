@@ -231,7 +231,7 @@ function Protocol() {
     <section className="section_protocol" id="protocol">
       <h1 className="text-center">Protocol</h1>
       <p className="text-center">Select a fruit to view its protocol document.</p>
-      <Container>
+      <Container fluid="sm">
         <Row className="g-4 justify-content-center">
           {(showAll ? fruits : fruits.slice(0, 6)).map((fruit) => (
             <Col key={fruit.id} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">
@@ -305,11 +305,14 @@ function Protocol() {
           padding-top: 5px;
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           scroll-margin-top: 50px;
-          min-height: auto;
-          height: 100%
+          min-height: 100vh; /* Adjusted for navbar height */
+          height: auto;
+          padding-left: 10px;
+          padding-right: 10px;
           overflow-x: hidden;
           display: flex;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
         }
         .modal-header .btn-close {
@@ -317,8 +320,10 @@ function Protocol() {
           position: relative;
           left: 0;
         }
+        
         .fruit-card {
-          width: 240px;
+          width:100%;
+          max-width: 240px;
           height: 180px;
           border-radius: 12px;
           overflow: hidden;
@@ -343,6 +348,14 @@ function Protocol() {
         }
         .fruit-card:hover .fruit-image img {
           transform: scale(1.1);
+        }
+          .fruit-card-title {
+          white-space: normal;
+          overflow: break-word;
+          font-size: 1rem;
+      }
+          .dropdown-menu{
+          width: 100%;
         }
 
         /* Responsive Styles */
@@ -379,6 +392,24 @@ function Protocol() {
     padding-right: 10px !important;
   }
 }
+  @media (max-width: 529px){
+  .row.g-4 {
+    display: grid !important;
+    grid-template-columns: repeat (2, 1fr) !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 10-xx !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+    .card{
+    width: 100% !important;
+    box-sizing: border-box !important;
+    }
+    body, html {
+    overflow-x: hidden !important;
+    }
+    }
 
       `}</style>
     </section>

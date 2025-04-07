@@ -96,9 +96,10 @@ function Hero({ darkMode }) {
           display: flex;
           align-items: center;
           justify-content: center;
-          min-height: auto;
-          height: 100%;
-          padding: 20px;
+          min-height: 100vh;
+          height: auto;
+          padding-top: 100px;
+          padding-bottom: 50px;
           background-color: rgb(255, 255, 255);
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           transition: background-color 0.3s ease, color 0.3s ease;

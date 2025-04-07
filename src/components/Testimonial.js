@@ -104,6 +104,12 @@ function Testimonial() {
         .section_Testimonial {
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           padding-top: 0;
+          min-height: 100vh; /* Adjusted for navbar height */
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
           margin-top: 0; /* Remove extra margin at the top */
         }
 

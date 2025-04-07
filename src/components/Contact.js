@@ -1,4 +1,3 @@
-// components/Contact.jsx
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
@@ -9,7 +8,7 @@ function Contact() {
     phone: '',
     message: ''
   });
-  
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -32,8 +31,8 @@ function Contact() {
       <h1 className='text-center'>Contact Us</h1>
       <p className='text-center fs-5'>Get in touch with us today!</p>
       <Container>
-        <Row className="justify-content-center">
-          <Col xs={10} md={5}>
+        <Row className="d-flex flex-column flex-md-row justify-content-center align-items-start gap-4">
+          <Col xs={12} md={5}>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-2" controlId="formName">
                 <Form.Label>Name</Form.Label>
@@ -93,50 +92,34 @@ function Contact() {
               </Button>
             </Form>
           </Col>
-          <Col xs={12} md={6} className="d-flex align-items-center justify-content-center">
-                    <iframe
-            title="Google Map"
-            src={`https://www.google.com/maps/embed/v1/place?q=2nd+Flr.+The+Arete+Square,+Congressional+Ave.+Quezon+City,+Zip+Code+1106&key=AIzaSyB2RyzwQTj2HT_pQdGJLg-5Q4Nz106r8Ic`}
-            width="100%"
-            height="400"
-            style={{ border: 0, marginTop: '20px' }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
 
+          <Col xs={12} md={6}>
+            <div style={{ width: '100%', height: '100%', marginTop: '40px' }}>
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed/v1/place?q=2nd+Flr.+The+Arete+Square,+Congressional+Ave.+Quezon+City,+Zip+Code+1106&key=AIzaSyB2RyzwQTj2HT_pQdGJLg-5Q4Nz106r8Ic"
+                style={{ width: '100%', height: '400px', border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </Col>
         </Row>
       </Container>
+
       <style>{`
-      .section_contact{
-      background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
-      padding-top: 150px;
-      padding: 5px 5px;  
-      }
-      .section_contact.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  .section_contact.dark-mode .form-control {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    border: 1px solid #444;
-  }
-  
-  .section_contact.dark-mode .form-label {
-    color: #ffffff;
-  }
-  
-  .section_contact.dark-mode .btn-primary {
-    background-color: #6200ea;
-    border: none;
-  }
-  
-  .section_contact.dark-mode .btn-primary:hover {
-    background-color: #3700b3;
-  }
+        .section_contact {
+          background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
+          min-height: 100vh;
+          padding: 40px 15px;
+        }
+
+        @media (max-width: 767px) {
+          iframe {
+            height: 300px !important;
+          }
+        }
       `}</style>
     </section>
   );

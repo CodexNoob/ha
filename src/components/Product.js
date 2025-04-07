@@ -97,8 +97,9 @@ function Product({ darkMode }) {
           display: flex;
           align-items: center;
           justify-content: center;
-          min-height: calc(100vh - 80px); /* Adjusted for navbar height */
-          padding-top: 5px; /* Reduce padding at the top */
+          min-height: 100vh; /* Adjusted for navbar height */
+          height: auto;
+          padding-top: -20px; /* Reduce padding at the top */
           padding-bottom: 5px;
           padding-left: 10%;
           padding-right: 10%;
