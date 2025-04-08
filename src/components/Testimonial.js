@@ -213,17 +213,24 @@ function Testimonial() {
           max-width: 600px;
           text-align: center;
         }
-          @media (max-width: 768px) and (min-height: 571px) {
+       @media (max-width: 768px) and (min-height: 571px) {
+  /* Modify the .row container to use flex or grid */
   .row {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px;
+    gap: 10px;  /* Reduce the gap between cards */
   }
 
   .col-md-4 {
-    width: 100%;
+    width: 100%; /* Make sure cards take up full width */
     display: flex;
     justify-content: center;
+  }
+
+  /* Make the testimonial cards bigger */
+  .flip-card {
+    width: 95%;  /* Adjust the width to make it larger */
+    height: 250px; /* Adjust the height to make it taller */
   }
 }
 
