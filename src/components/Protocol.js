@@ -235,17 +235,24 @@ function Protocol() {
         <Row className="g-4 justify-content-center">
           {(showAll ? fruits : fruits.slice(0, 6)).map((fruit) => (
             <Col key={fruit.id} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">
-              <Card className="fruit-card text-center p-3 shadow-sm"
-                onClick={() => handleFruitClick(fruit)}
-                style={{ cursor: 'pointer', width: '240px' }}>
-                <div className="fruit-image">
-                  <img src={fruit.image} alt={fruit.name} />
-                </div>
-                <Card.Body>
-                  <Card.Title>{fruit.name}</Card.Title>
-                </Card.Body>
-              </Card>
-            </Col>
+            <Card
+              className="fruit-card text-center p-3 shadow-sm"
+              onClick={() => handleFruitClick(fruit)}
+              style={{ cursor: 'pointer', width: '240px' }}
+            >
+              <div className="fruit-image">
+                <img
+                  src={fruit.image}
+                  alt={fruit.name}
+                  className={fruit.name === 'Ratooning' || fruit.name === 'Fish Pond' ? 'rounded-circle' : ''}
+                />
+              </div>
+              <Card.Body>
+                <Card.Title>{fruit.name}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          
           ))}
         </Row>
       </Container>
@@ -323,6 +330,7 @@ function Protocol() {
         
         .fruit-card {
           width:100%;
+          padding: 5px;
           max-width: 240px;
           height: 180px;
           border-radius: 12px;
@@ -340,20 +348,30 @@ function Protocol() {
           transform: scale(1.05);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
+          .fruit-image {
+            padding: 5px; /* Reduce padding around the image */
+          }
         .fruit-image img {
-          width: 100px;
-          height: 100px;
+          width: 90px;
+          height: 90px;
           object-fit: contain;
           transition: transform 0.3s ease-in-out;
         }
         .fruit-card:hover .fruit-image img {
           transform: scale(1.1);
         }
+          .fruit-card .card-body {
+          padding: 5px; /* Reduce padding inside the card body */
+        }
           .fruit-card-title {
           white-space: normal;
           overflow: break-word;
           font-size: 1rem;
       }
+                    .fruit-card .card-body .card-title {
+            font-size: 1rem; /* Reduce font size for the title */
+            margin-top: 5px; /* Reduce space between image and title */
+          }
           .dropdown-menu{
           width: 100%;
         }
