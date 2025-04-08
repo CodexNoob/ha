@@ -27,7 +27,7 @@ function NavBar() {
     if (targetElement) {
       const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get accurate position
       window.scrollTo({
-        top: elementPosition - navbarHeight - 10, // Adjust based on navbar height
+        top: elementPosition - navbarHeight - 20, // Adjust based on navbar height
         behavior: "smooth",
       });
     }

@@ -107,7 +107,7 @@ function Hero({ darkMode }) {
           justify-content: center;
           min-height: 100vh;
           height: auto;
-          padding-top: 100px;
+          padding-top: 50px;
           padding-bottom: 50px;
           background-color: rgb(255, 255, 255);
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
@@ -199,7 +199,7 @@ function Hero({ darkMode }) {
 
         @media (min-width: 1280px) {
           .hero-section {
-            padding-top: 150px;
+            padding-top: 50px;
           }
 
           .hero-text h1 {
@@ -224,25 +224,29 @@ function Hero({ darkMode }) {
         }
 
         @media (max-width: 1024px) {
-          .hero-content {
-            flex-direction: column-reverse;
-            text-align: center;
-            padding-top: 10px;
-          }
+  .hero-section {
+    padding: 60px 20px;
+    justify-content: center;
+    text-align: center;
+  }
 
-          .hero-text {
-            max-width: 100%;
-            text-align: center;
-          }
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+  }
 
-          .hero-image img {
-            max-width: 350px;
-          }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
 
-          .image-caption {
-            font-size: 1.3rem;
-          }
-        }
+  .hero-image {
+    margin-top: 30px;
+  }
+}
+
 
         @media (min-width: 1025px) {
           .hero-content {

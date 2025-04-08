@@ -134,7 +134,7 @@ return (
           ))}
         </div>
         <p 
-  style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', textAlign: 'center', marginTop: '50px', fontSize: '1.2rem' }} 
+  style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', textAlign: 'center', marginTop: '70px', fontSize: '1.2rem' }} 
   onClick={() => {
     setShowAll((prev) => {
       const newState = !prev;
@@ -189,7 +189,6 @@ return (
 /* Thumbnail Gallery */
 
 .section_gallery {
-          padding-top: 5px;
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           scroll-margin-top: 50px;
           min-height: 100vh; /* Adjusted for navbar height */
@@ -197,10 +196,9 @@ return (
           overflow-x: hidden;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-center;
           align-items: center;
           margin-bottom: 0; /* Remove extra margin at the bottom */
-          padding-bottom: 5px;
         }
 
 

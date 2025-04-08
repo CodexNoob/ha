@@ -260,7 +260,7 @@ function Protocol() {
       {/* See More / See Less Button */}
       <div className="text-center mt-4">
         <p 
-          style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', fontSize: '1.2rem' }} 
+          style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', fontSize: '1.2rem', paddingTop: '3rem' }} 
           onClick={() => {
             setShowAll((prev) => {
               const newState = !prev;
@@ -309,7 +309,6 @@ function Protocol() {
 
       <style>{`
         .section_protocol {
-          padding-top: 5px;
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           scroll-margin-top: 50px;
           min-height: 100vh; /* Adjusted for navbar height */
@@ -319,7 +318,7 @@ function Protocol() {
           overflow-x: hidden;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
         }
         .modal-header .btn-close {

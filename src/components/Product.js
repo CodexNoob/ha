@@ -47,7 +47,7 @@ function Product({ darkMode }) {
 
         {/* Product Text */}
         <div className="product-text">
-          <h2>Our Organic Products</h2>
+          <h1>Our Organic Products</h1>
           <div className="features-benefits-container">
             <div className="features-benefits-list">
               <p><strong>MASINAG FEATURES</strong></p>
@@ -95,11 +95,9 @@ function Product({ darkMode }) {
 
         .product-section {
           display: flex;
-          align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           min-height: 100vh; /* Adjusted for navbar height */
-          height: auto;
-          padding-top: -100px; /* Reduce padding at the top */
+          height: auto; /* Reduce padding at the top */
           padding-bottom: 5px;
           padding-left: 10%;
           padding-right: 10%;
@@ -108,11 +106,12 @@ function Product({ darkMode }) {
           overflow: hidden;
         }
 
-        .product-text h2 {
+        .product-text h1 {
     padding-bottom: 30px; /* Adjust the value as needed */
   }
 
         .product-content {
+          margin: 0 auto;
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
@@ -120,19 +119,14 @@ function Product({ darkMode }) {
           width: 100%;
         }
 
-        /* Product Images */
-        .product-images {
-          display: flex;
-          gap: 30px;
-        }
-
         .product-img {
           width: 100%;
           max-width: 250px;
           border-radius: 10px;
-          height: 450px;
+          height: auto;
+          object-fit: contain;
           opacity: 0;
-          margin-left: 70px;
+          margin-left: 0;
           transform: translateX(-100%);
           transition: transform 0.8s ease-in-out, opacity 1s ease-in-out;
         }
@@ -178,7 +172,7 @@ function Product({ darkMode }) {
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding-top: 50px;
+            padding-top: 5px;
           }
 
           .features-benefits-container {

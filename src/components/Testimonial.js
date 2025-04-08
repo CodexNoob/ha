@@ -109,7 +109,7 @@ function Testimonial() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           margin-top: 0; /* Remove extra margin at the top */
         }
 

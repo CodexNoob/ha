@@ -115,7 +115,7 @@ function Contact() {
           height: auto;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: flex-center;
           align-items: center;
         }
 

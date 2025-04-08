@@ -132,7 +132,7 @@ function Certificate() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
         }
 
         .certificate-card {
@@ -144,9 +144,9 @@ function Certificate() {
           align-items: center;
           justify-content: center;
           text-align: center;
-          border-radius: 10px;
+          border-radius: 20px;
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-          padding: 5px;
+          padding: 10px;
           cursor: pointer;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
