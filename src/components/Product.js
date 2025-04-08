@@ -99,7 +99,7 @@ function Product({ darkMode }) {
           justify-content: center;
           min-height: 100vh; /* Adjusted for navbar height */
           height: auto;
-          padding-top: -20px; /* Reduce padding at the top */
+          padding-top: -100px; /* Reduce padding at the top */
           padding-bottom: 5px;
           padding-left: 10%;
           padding-right: 10%;

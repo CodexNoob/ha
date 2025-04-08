@@ -1,4 +1,3 @@
-/* Global variables with fallbacks */
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #3498db;
@@ -10,7 +9,7 @@
   --spacing-unit: 0.25rem;
 }
 
-/* Base styles with modern resets */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -22,9 +21,6 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
-}
-
-body {
   font-family: var(--font-family);
   color: var(--text-color);
   background-color: var(--background-color);
@@ -32,7 +28,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container styles with responsive design */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -40,29 +35,11 @@ body {
   width: 100%;
 }
 
-/* Utility classes for spacing */
+/* Utility spacing */
 .mt-1 { margin-top: var(--spacing-unit); }
 .mb-1 { margin-bottom: var(--spacing-unit); }
 .mx-1 { margin-left: var(--spacing-unit); margin-right: var(--spacing-unit); }
 .px-1 { padding-left: var(--spacing-unit); padding-right: var(--spacing-unit); }
-
-/* Light Mode (Default) */
-body.light-mode {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-.dark-mode .hero-section,
-.dark-mode .section_contact {
-  background-color: #222;
-  color: #e0e0e0;
-}
 
 /* Navbar */
 .navbar {
@@ -70,11 +47,6 @@ body.light-mode {
   justify-content: space-between;
   padding: 1rem;
   background: #fff;
-}
-
-.navbar.dark {
-  background: #333;
-  color: white;
 }
 
 /* Button */

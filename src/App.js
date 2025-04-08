@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Product from './components/Product';
@@ -12,19 +12,17 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
   return (
-    <div className={darkMode ? "dark-mode" : ""}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero darkMode={darkMode} />
-      <Product darkMode={darkMode} />
-      <Protocol darkMode={darkMode} />
-      <Gallery darkMode={darkMode} />
-      <Testimonial darkMode={darkMode} />
-      <Certificate darkMode={darkMode} />
-      <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
+    <div>
+      <Navbar />
+      <Hero />
+      <Product />
+      <Protocol />
+      <Gallery />
+      <Testimonial />
+      <Certificate />
+      <Contact />
+      <Footer />
     </div>
   );
 }

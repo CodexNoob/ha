@@ -132,7 +132,7 @@ function Hero({ darkMode }) {
         .hero-text {
           flex: 1;
           max-width: 50%;
-          padding: 20px;
+          padding: 10px;
           text-align: left;
         }
 
@@ -178,11 +178,56 @@ function Hero({ darkMode }) {
           color: #90EE90;
         }
 
+        /* Button Styling */
+        .hero-btn {
+          cursor: pointer;
+          margin-top: 50px;
+          padding: 10px 20px;
+          font-size: 1rem;
+          font-weight: bold;
+          background-color: hsl(122, 72.40%, 17.10%);
+          color: white;
+          border: 20px;
+          border-radius: 25px;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .hero-btn:hover {
+          background-color: white;
+          color: hsl(122, 72.40%, 17.10%);
+        }
+
+        @media (min-width: 1280px) {
+          .hero-section {
+            padding-top: 150px;
+          }
+
+          .hero-text h1 {
+            font-size: 4rem;
+          }
+
+          .hero-text p {
+            font-size: 1.3rem;
+          }
+
+          .hero-image img {
+            max-width: 500px;
+          }
+
+          .image-caption {
+            font-size: 1.8rem;
+          }
+
+          .hero-content {
+            max-width: 1400px;
+          }
+        }
+
         @media (max-width: 1024px) {
           .hero-content {
-            flex-direction: column-reverse; /* Hero image is above text */
+            flex-direction: column-reverse;
             text-align: center;
-            padding-top: 50px;
+            padding-top: 10px;
           }
 
           .hero-text {
@@ -201,7 +246,7 @@ function Hero({ darkMode }) {
 
         @media (min-width: 1025px) {
           .hero-content {
-            flex-direction: row; /* Image and text side by side */
+            flex-direction: row;
             text-align: left;
           }
 
@@ -221,7 +266,7 @@ function Hero({ darkMode }) {
 
         @media (max-width: 768px) {
           .hero-content {
-            flex-direction: column-reverse; /* Hero image is above text */
+            flex-direction: column-reverse;
             text-align: center;
             padding-top: 50px;
           }

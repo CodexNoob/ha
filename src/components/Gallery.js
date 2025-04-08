@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback,  } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 import img1 from "../assets/imgs/Island Rose Feb 9, 2015/Greenhouse handled by Ms. Mae Ann 2.JPG";
@@ -71,7 +71,7 @@ const Gallery = () => {
     };
   }, [isLightboxOpen]);
   
-
+  
   const openLightbox = (index, e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -83,18 +83,32 @@ const Gallery = () => {
     e.stopPropagation();
     setIsLightboxOpen(false);
   };
-
-  const nextImage = (e) => {
+  
+  const nextImage = useCallback((e) => {
     e.stopPropagation();
-    setActiveIndex((prev) => (prev + 1) % images.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+  
+  const prevImage = useCallback((e) => {
+    e.stopPropagation();
+    setActiveIndex((prevIndex) =>
+      (prevIndex - 1 + images.length) % images.length
+  );
+}, [images.length]);
+
+useEffect(() => {
+  const handleKeyDown = (e) => {
+    if (!isLightboxOpen) return;
+    if (e.key === "ArrowRight") nextImage(e);
+    if (e.key === "ArrowLeft") prevImage(e);
+    if (e.key === "Escape") setIsLightboxOpen(false);
   };
 
-  const prevImage = (e) => {
-    e.stopPropagation();
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  window.addEventListener("keydown", handleKeyDown);
+  return () => window.removeEventListener("keydown", handleKeyDown);
+}, [isLightboxOpen, nextImage, prevImage]);
 
-  return (
+return (
     <section className="section_gallery" id="gallery">
       <h1 className="text-center">Gallery</h1>
       <p className="text-center">Click on an image to view it in full size.</p>
@@ -127,7 +141,7 @@ const Gallery = () => {
       if (!newState) { // If collapsing (showAll becomes false)
         setTimeout(() => {
           document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
-        }, 100);
+        }, 200);
       }
       return newState;
     });
@@ -156,6 +170,22 @@ const Gallery = () => {
       )}
 
       <style>{`
+      @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.thumbs img {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
 /* Thumbnail Gallery */
 
 .section_gallery {
@@ -175,13 +205,13 @@ const Gallery = () => {
 
 
 .thumbs {
-  display: flex;
+   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   overflow: hidden;
   max-width: 100%; 
-  transtion: max-height all 0.8s ease-in-out;
+  transition: max-height all 0.8s ease-in-out;
 }
 
 
@@ -344,25 +374,34 @@ const Gallery = () => {
 
 
 @media (max-width: 600px) {
-  .lightbox-content img {
-    max-width: 90vw;
-    max-height: 70vh;
+  .gallery-switch {
+    padding: 0 20px;
+    flex-wrap: wrap;
   }
 
-  .nav-btn.left {
-    left: -50px;
+  .gallery-btn {
+    flex: 1 1 45%;
+    text-align: center;
   }
 
-  .nav-btn.right {
-    right: -50px;
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    padding: 0 20px;
   }
 
-  .close-btn {
-    top: 5px;
-    right: 10px;
+  .thumbs img {
+    width: 100%;
+    height: auto;
+    max-width: 170px;
+    aspect-ratio: 1 / 1;
   }
 }
-      `}</style>
+
+
+`}</style>
     </section>
   );
 };

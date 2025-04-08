@@ -19,21 +19,21 @@ function NavBar() {
   }, [darkMode]);
 
   const handleNavClick = (e, targetId) => {
-  e.preventDefault();
-  const targetElement = document.getElementById(targetId);
-  const navbar = document.querySelector(".navbar");
-  const navbarHeight = navbar ? navbar.offsetHeight : 80; // Get navbar height dynamically
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 80; // Get navbar height dynamically
 
-  if (targetElement) {
-    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get accurate position
-    window.scrollTo({
-      top: elementPosition - navbarHeight - 10, // Adjust based on navbar height
-      behavior: "smooth",
-    });
-  }
+    if (targetElement) {
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get accurate position
+      window.scrollTo({
+        top: elementPosition - navbarHeight - 10, // Adjust based on navbar height
+        behavior: "smooth",
+      });
+    }
 
-  setExpanded(false); // Close navbar on mobile
-};
+    setExpanded(false); // Close navbar on mobile
+  };
 
   return (
     <Navbar
@@ -81,9 +81,13 @@ function NavBar() {
           box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
         }
 
-        /* Responsive Navbar */
+        /* Navbar Styling */
         .navbar {
           padding: 10px 15px;
+        }
+
+        .navbar-collapse {
+          justify-content: flex-end; /* Align menu items to the right */
         }
 
         /* Navbar Toggle Button */
@@ -131,22 +135,6 @@ function NavBar() {
           color: white !important;
         }
 
-        /* Dark Mode Toggle Button */
-        .toggle-btn {
-          padding: 6px 10px;
-          border-radius: 5px;
-          font-size: 1.1rem;
-          background-color: transparent;
-          border: 1px solid gray;
-          color: ${darkMode ? "white" : "black"};
-          cursor: pointer;
-          transition: 0.3s ease;
-        }
-        .toggle-btn:hover {
-          background-color: ${darkMode ? "white" : "black"};
-          color: ${darkMode ? "black" : "white"};
-        }
-
         /* Responsive Adjustments */
         @media (max-width: 1024px) {
           .nav-text {
@@ -154,6 +142,13 @@ function NavBar() {
             text-align: center;
             width: 100%;
             padding: 8px;
+          }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+          .navbar-collapse {
+            text-align: center;
           }
         }
       `}</style>
