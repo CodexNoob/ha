@@ -242,7 +242,7 @@ function Product({ darkMode }) {
 
         @media (max-width: 480px) {
           .product-section {
-            padding: 20px;
+            padding: 10px;
           }
 
           .product-content{
@@ -254,7 +254,7 @@ function Product({ darkMode }) {
           }
 
           .features-benefits-container {
-            gap: 10px;
+            gap: 5px;
           }
 
           .features-benefits-list {

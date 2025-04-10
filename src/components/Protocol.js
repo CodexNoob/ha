@@ -210,7 +210,7 @@ function Protocol() {
   const [showModal, setShowModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
-  const [setTouchEndX] = useState(null);
+  
 
 
 
@@ -239,12 +239,16 @@ function Protocol() {
   };
   
   const handleTouchEnd = (e) => {
-    setTouchEndX(e.changedTouches[0].clientX);
-    if (touchStartX - e.changedTouches[0].clientX > 75) {
-      // Swipe left
-    } else if (e.changedTouches[0].clientX - touchStartX > 75) {
-      // Swipe right
-      setShowModal(false); // Close modal
+    const touchEndX = e.changedTouches[0].clientX;
+
+    // Prevent default behavior
+    e.preventDefault();
+
+    if (touchStartX - touchEndX > 75) {
+      // Swipe left (you can add functionality here if needed)
+    } else if (touchEndX - touchStartX > 75) {
+      // Swipe right - close the modal
+      setShowModal(false);
     }
   };
   
@@ -327,6 +331,7 @@ function Protocol() {
   style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
   onTouchStart={handleTouchStart}
   onTouchEnd={handleTouchEnd}
+  onTouchMove={(e) => e.preventDefault()} // Prevent default swipe behavior
 >
   {selectedDoc && ( 
     <iframe 
