@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect  } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card, Modal, Dropdown } from 'react-bootstrap';
 import img1 from '../assets/certificate/protocolthumb/cashew-removebg-preview.png';
@@ -46,6 +46,8 @@ import garlic from '../assets/certificate/protocol/Garlic.pdf';
 import watermelon from '../assets/certificate/protocol/WATERMELON-DirectSeeding.pdf';
 import watermelon1 from '../assets/certificate/protocol/WATERMELON-Transplanting.pdf';
 
+
+// PDF Rendering Component
 
 
 const fruits = [
@@ -208,6 +210,8 @@ function Protocol() {
   const [showModal, setShowModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
+
+
   useEffect(() => {
     document.documentElement.style.overflow = showModal ? 'hidden' : 'auto';
     return () => { document.documentElement.style.overflow = 'auto'; };
@@ -281,6 +285,7 @@ function Protocol() {
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg" backdrop="static" keyboard={false}>
         <Modal.Header closeButton className="d-flex justify-content-center w-100">
           {selectedFruit?.docs && (
+
             <Dropdown className="me-auto">
               <Dropdown.Toggle variant="secondary">
                 {selectedFruit.name.toUpperCase()} PROTOCOLS
@@ -301,7 +306,7 @@ function Protocol() {
           </div>
         </Modal.Header>
         <Modal.Body style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }}>
-          {selectedDoc && (
+          {selectedDoc && ( 
             <iframe src={selectedDoc} title={modalTitle} width="100%" height="400px" style={{ border: 'none', display: 'block' }} />
           )}
         </Modal.Body>

@@ -199,7 +199,7 @@ function Hero({ darkMode }) {
 
         @media (min-width: 1280px) {
           .hero-section {
-            padding-top: 50px;
+            padding-top: 150px;
           }
 
           .hero-text h1 {
@@ -222,6 +222,27 @@ function Hero({ darkMode }) {
             max-width: 1400px;
           }
         }
+          @media (min-width: 1025px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .hero-text {
+    max-width: 50%;
+    text-align: left;
+    padding-left: 60px; /* ✅ ADD THIS */
+  }
+
+  .hero-image img {
+    max-width: 400px;
+  }
+
+  .image-caption {
+    font-size: 1.5rem;
+  }
+}
+
 
         @media (max-width: 1024px) {
   .hero-section {

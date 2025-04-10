@@ -306,11 +306,11 @@ return (
 
 /* Button Positioning */
 .nav-btn.left {
-  left: -60px;
+  left: -40px;
 }
 
 .nav-btn.right {
-  right: -60px;
+  right: -40px;
 }
 
 /* Close Button */
