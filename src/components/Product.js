@@ -96,11 +96,9 @@ function Product({ darkMode }) {
         .product-section {
           display: flex;
           justify-content: flex-start;
-          min-height: 100vh; /* Adjusted for navbar height */
-          height: auto; /* Reduce padding at the top */
-          padding-bottom: 5px;
-          padding-left: 10%;
-          padding-right: 10%;
+          min-height: 100vh;
+          height: auto; /* Let the height adapt to the content */
+          padding: 10px 10%; /* Adjust padding as needed */
           background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
           transition: background-color 0.3s, color 0.3s;
           overflow: hidden;
@@ -114,7 +112,7 @@ function Product({ darkMode }) {
           margin: 0 auto;
           display: flex;
           align-items: flex-start;
-          gap: 120px;
+          gap: 50px;
           justify-content: flex-start;
           max-width: 1200px;
           width: 100%;
@@ -122,7 +120,7 @@ function Product({ darkMode }) {
 
         .product-img {
           width: 100%;
-          max-width: 210px;
+          max-width: 150px;
           border-radius: 10px;
           height: auto;
           padding-top: 20px;
@@ -147,7 +145,7 @@ function Product({ darkMode }) {
         .features-benefits-container {
           display: flex;
           justify-content: flex-start;
-          gap: 40px;
+          gap: 20px;
           max-width: 800px;
         }
 
@@ -166,20 +164,35 @@ function Product({ darkMode }) {
         .product-section.dark .product-text p {
           color: #fff !important;
         }
-          @media (min-width: 1025px) {
-  .product-img {
-    max-width: 190px; /* Adjust size for desktop */
-    width: auto;
-  }
-}
+        
+        // @media (min-width: 1001px) and (max-width: 1800px) {
+        //   .product-section {
+        //     padding-bottom: 150px; /* Ensure consistent padding for this range */
+        //     }
+        //     .product-content{
+        //     gap: 50px;
+        //     }
+        // }
+
+        @media (min-width: 1001px) {
+          .product-img {
+            max-width: 200px; /* Adjust size for desktop */
+            width: auto;
+            height: auto;
+          }
+        }
 
         /* Responsive */
-        @media (max-width: 1024px){
+        @media (max-width: 1000px){
           .product-content {
             flex-direction: column;
             align-items: center;
             text-align: center;
             padding-top: 5px;
+          }
+
+          .product-section {
+            padding-bottom: 20px; /* Adjust padding for smaller screens */
           }
 
           .features-benefits-container {

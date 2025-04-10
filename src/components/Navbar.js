@@ -44,7 +44,7 @@ function NavBar() {
       variant={darkMode ? "dark" : "light"}
     >
       <Container fluid>
-        <Navbar.Brand href="#" className="d-flex align-items-center ps-4">
+        <Navbar.Brand href="#" className="d-flex align-items-center ps-3">
           <img src={Logo} width="70" height="50" className="d-inline-block align-top" alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -138,10 +138,10 @@ function NavBar() {
         /* Responsive Adjustments */
         @media (max-width: 1024px) {
           .nav-text {
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-align: center;
             width: 100%;
-            padding: 8px;
+            padding: 5px;
           }
         }
 

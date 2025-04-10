@@ -209,6 +209,9 @@ function Protocol() {
   const [modalTitle, setModalTitle] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [setTouchEndX] = useState(null);
+
 
 
 
@@ -230,6 +233,21 @@ function Protocol() {
     setSelectedDoc(pdf.url);
     setModalTitle(pdf.name);
   };
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.changedTouches[0].clientX);
+  };
+  
+  const handleTouchEnd = (e) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+    if (touchStartX - e.changedTouches[0].clientX > 75) {
+      // Swipe left
+    } else if (e.changedTouches[0].clientX - touchStartX > 75) {
+      // Swipe right
+      setShowModal(false); // Close modal
+    }
+  };
+  
 
   return (
     <section className="section_protocol" id="protocol">
@@ -305,11 +323,21 @@ function Protocol() {
             </Modal.Title>
           </div>
         </Modal.Header>
-        <Modal.Body style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }}>
-          {selectedDoc && ( 
-            <iframe src={selectedDoc} title={modalTitle} width="100%" height="400px" style={{ border: 'none', display: 'block' }} />
-          )}
-        </Modal.Body>
+        <Modal.Body 
+  style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
+  onTouchStart={handleTouchStart}
+  onTouchEnd={handleTouchEnd}
+>
+  {selectedDoc && ( 
+    <iframe 
+      src={selectedDoc} 
+      title={modalTitle} 
+      width="100%" 
+      height="500px" 
+      style={{ border: 'none', display: 'block' }} 
+    />
+  )}
+</Modal.Body>
       </Modal>
 
       <style>{`

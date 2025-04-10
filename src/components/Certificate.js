@@ -194,10 +194,12 @@ function Certificate() {
 
         .close-btn {
           font-size: 30px;
+          right: 10px;
           background: none;
           border: none;
           cursor: pointer;
-          color: black;
+          color: black !important;
+          box-shadow: none;
         }
 
         .panel-title {
@@ -205,6 +207,8 @@ function Certificate() {
           align-items: center;
           gap: 10px;
           margin-bottom: 20px;
+          justify-content: flex-start;
+          position: relative;
         }
 
         .panel-logo {
