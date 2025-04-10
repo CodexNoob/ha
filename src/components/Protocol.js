@@ -210,10 +210,6 @@ function Protocol() {
   const [showModal, setShowModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
-  
-
-
-
 
   useEffect(() => {
     document.documentElement.style.overflow = showModal ? 'hidden' : 'auto';
@@ -240,18 +236,14 @@ function Protocol() {
   
   const handleTouchEnd = (e) => {
     const touchEndX = e.changedTouches[0].clientX;
-
-    // Prevent default behavior
     e.preventDefault();
 
     if (touchStartX - touchEndX > 75) {
-      // Swipe left (you can add functionality here if needed)
+      // Swipe left - can be implemented with additional functionality
     } else if (touchEndX - touchStartX > 75) {
-      // Swipe right - close the modal
       setShowModal(false);
     }
   };
-  
 
   return (
     <section className="section_protocol" id="protocol">
@@ -261,29 +253,27 @@ function Protocol() {
         <Row className="g-4 justify-content-center">
           {(showAll ? fruits : fruits.slice(0, 6)).map((fruit) => (
             <Col key={fruit.id} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">
-            <Card
-              className="fruit-card text-center p-3 shadow-sm"
-              onClick={() => handleFruitClick(fruit)}
-              style={{ cursor: 'pointer', width: '240px' }}
-            >
-              <div className="fruit-image">
-                <img
-                  src={fruit.image}
-                  alt={fruit.name}
-                  className={fruit.name === 'Ratooning' || fruit.name === 'Fish Pond' ? 'rounded-circle' : ''}
-                />
-              </div>
-              <Card.Body>
-                <Card.Title>{fruit.name}</Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-          
+              <Card
+                className="fruit-card text-center p-3 shadow-sm"
+                onClick={() => handleFruitClick(fruit)}
+                style={{ cursor: 'pointer', width: '240px' }}
+              >
+                <div className="fruit-image">
+                  <img
+                    src={fruit.image}
+                    alt={fruit.name}
+                    className={fruit.name === 'Ratooning' || fruit.name === 'Fish Pond' ? 'rounded-circle' : ''}
+                  />
+                </div>
+                <Card.Body>
+                  <Card.Title>{fruit.name}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
           ))}
         </Row>
       </Container>
 
-      {/* See More / See Less Button */}
       <div className="text-center mt-4">
         <p 
           style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', fontSize: '1.2rem', paddingTop: '3rem' }} 
@@ -307,7 +297,6 @@ function Protocol() {
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg" backdrop="static" keyboard={false}>
         <Modal.Header closeButton className="d-flex justify-content-center w-100">
           {selectedFruit?.docs && (
-
             <Dropdown className="me-auto">
               <Dropdown.Toggle variant="secondary">
                 {selectedFruit.name.toUpperCase()} PROTOCOLS
@@ -328,21 +317,21 @@ function Protocol() {
           </div>
         </Modal.Header>
         <Modal.Body 
-  style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
-  onTouchStart={handleTouchStart}
-  onTouchEnd={handleTouchEnd}
-  onTouchMove={(e) => e.preventDefault()} // Prevent default swipe behavior
->
-  {selectedDoc && ( 
-    <iframe 
-      src={selectedDoc} 
-      title={modalTitle} 
-      width="100%" 
-      height="500px" 
-      style={{ border: 'none', display: 'block' }} 
-    />
-  )}
-</Modal.Body>
+          style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onTouchMove={(e) => e.preventDefault()} // Prevent default swipe behavior
+        >
+          {selectedDoc && ( 
+            <iframe 
+              src={selectedDoc} 
+              title={modalTitle} 
+              width="100%" 
+              height="500px" 
+              style={{ border: 'none', display: 'block' }} 
+            />
+          )}
+        </Modal.Body>
       </Modal>
 
       <style>{`
