@@ -1,4 +1,5 @@
 import React from "react";
+import "../components/styles/footer.css"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,68 +69,6 @@ function Footer() {
           <p>© 2025 All Rights Reserved By <strong>HANFORD</strong></p>
         </div>
       </footer>
-
-      <style>{`
-        .footer-social a {
-          font-size: 1.25rem;
-          margin: 0 0.5rem;
-        }
-
-        .mission-vision-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
-
-        .mission-vision {
-          font-size: 1rem;
-          max-width: 500px;
-          width: 100%;
-        }
-
-        .footer-columns {
-          display: flex;
-          justify-content: space-around;
-          flex-wrap: wrap;
-          gap: 2rem;
-        }
-
-        .footer-col {
-          flex: 1 1 100%;
-          max-width: 100%;
-          text-align: center;
-        }
-
-        @media (min-width: 768px) {
-          .footer-col {
-            flex: 1 1 100%;
-            max-width: 100%;
-          }
-        }
-
-        @media (min-width: 992px) {
-          .footer-col {
-            flex: 1 1 30%;
-            max-width: 30%;
-          }
-
-          .footer-columns {
-            text-align: left;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .mission-vision {
-            font-size: 0.9rem;
-            padding: 0 1rem;
-          }
-
-          .footer-social a {
-            font-size: 1.1rem;
-          }
-        }
-      `}</style>
     </>
   );
 }

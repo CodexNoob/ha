@@ -1,0 +1,15 @@
+.section_contact {
+    background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-center;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    iframe {
+      height: 300px !important;
+    }
+  }

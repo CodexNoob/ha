@@ -1,0 +1,231 @@
+/* Gallery Section */
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .thumbs img {
+    animation: fadeIn 0.6s ease-in-out forwards;
+    opacity: 0; /* Start hidden */
+  }
+  
+  /* Thumbnail Gallery */
+  
+  .section_gallery {
+            background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
+            scroll-margin-top: 50px;
+            min-height: 100vh; /* Adjusted for navbar height */
+            height: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-center;
+            align-items: center;
+            margin-bottom: 0; /* Remove extra margin at the bottom */
+          }
+  
+  
+  .thumbs {
+     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow: hidden;
+    max-width: 100%; 
+    transition: max-height all 0.8s ease-in-out;
+  }
+  
+  
+  .thumbs.show-all {
+    max-height: 2000px; /* Expand smoothly */
+  }
+  
+  .thumbs img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.2s ease-in-out;
+    filter: grayscale(50%);
+  }
+  
+  .thumbs.show-all img {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .thumbs img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+  
+  /* See More Button */
+  .see-more-btn {
+    display: block;
+    margin: 20px auto;
+    background: none;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .see-more-btn:hover {
+    background: none;
+  }
+  
+  /* Lightbox Modal */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .lightbox-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+  }
+  
+  .lightbox-content img {
+    max-width: 85vw;
+    max-height: 85vh;
+    padding: 10px;
+    min-width: 60vw;
+    min-height: 60vh;
+    object-fit: contain;
+    border-radius: 5px;
+    background: transparent;
+  }
+  
+  
+  /* Navigation Buttons */
+  .nav-btn {
+    position: absolute;
+    background: transparent !important; 
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+    padding: 20px;
+    border-radius: 50%;
+  }
+  
+  .nav-btn:hover,
+  .close-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Button Positioning */
+  .nav-btn.left {
+    left: -40px;
+  }
+  
+  .nav-btn.right {
+    right: -40px;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    margin-top: 15px;
+    margin-right: 15px;
+    right: 10px;
+    background: transparent !important;
+    border: none;
+    font-size: 2.5rem;
+    color: white !important;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    padding: 10px;
+    border-radius: 50%;
+     z-index: 1100;
+  }
+  
+  .close-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Gallery Selection Buttons */
+  .gallery-switch {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .gallery-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;  
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    background: #ffffff;
+    color: black;
+  }
+  
+  .gallery-btn.active {
+    background:rgb(51, 59, 68);
+    color: white;
+  }
+  
+  .gallery-btn:hover {
+    background:rgb(0, 0, 0);
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  
+  @media (max-width: 600px) {
+    .gallery-switch {
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+  
+    .gallery-btn {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+  
+    .thumbs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      justify-items: center;
+      padding: 0 20px;
+    }
+  
+    .thumbs img {
+      width: 100%;
+      height: auto;
+      max-width: 170px;
+      aspect-ratio: 1 / 1;
+    }
+  }

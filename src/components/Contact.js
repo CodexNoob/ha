@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../components/styles/contact.css"
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 function Contact() {
@@ -107,24 +108,6 @@ function Contact() {
           </Col>
         </Row>
       </Container>
-
-      <style>{`
-        .section_contact {
-          background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
-          min-height: 100vh;
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-center;
-          align-items: center;
-        }
-
-        @media (max-width: 767px) {
-          iframe {
-            height: 300px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

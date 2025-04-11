@@ -1,4 +1,5 @@
 import React, { useState, useEffect  } from 'react';
+import "../components/styles/protocol.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card, Modal, Dropdown } from 'react-bootstrap';
 import img1 from '../assets/certificate/protocolthumb/cashew-removebg-preview.png';
@@ -297,29 +298,67 @@ function Protocol() {
         </p>
       </div>
 
-      {/* Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg" backdrop="static" keyboard={false}>
-        <Modal.Header closeButton className="d-flex justify-content-center w-100">
-          {selectedFruit?.docs && (
-            <Dropdown className="me-auto">
-              <Dropdown.Toggle variant="secondary">
-                {selectedFruit.name.toUpperCase()} PROTOCOLS
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                {selectedFruit.docs.map((pdf, index) => (
-                  <Dropdown.Item key={index} onClick={() => handleDocSelection(pdf)}>
-                    {pdf.name}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-          )}
-          <div className="w-100 text-center">
-            <Modal.Title style={{ whiteSpace: "pre-line", textAlign: "center", fontSize: "1.3rem", fontWeight: "medium" }}>
-              {modalTitle}
-            </Modal.Title>
-          </div>
-        </Modal.Header>
+  <Modal.Header className="d-flex justify-content-center w-100 position-relative">
+    {selectedFruit?.docs && (
+      <Dropdown className="me-auto">
+        <Dropdown.Toggle variant="secondary" size="sm" style={{ fontSize: '0.85rem' }}>
+  {selectedFruit.name.toUpperCase()} PROTOCOLS
+</Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          {selectedFruit.docs.map((pdf, index) => (
+            <Dropdown.Item
+  key={index}
+  onClick={() => handleDocSelection(pdf)}
+  style={{
+    fontSize: '0.85rem',
+    whiteSpace: 'normal',
+    textAlign: 'center',
+    borderBottom: '1px solid #ccc',
+    paddingBottom: '6px',
+    marginBottom: '6px',
+  }}
+>
+  {pdf.name}
+</Dropdown.Item>
+
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
+    )}
+    <div className="w-100 text-center">
+      <Modal.Title
+        style={{
+          whiteSpace: 'pre-line',
+          textAlign: 'center',
+          fontSize: '1.3rem',
+          fontWeight: 'medium',
+        }}
+      >
+        {modalTitle}
+      </Modal.Title>
+    </div>
+    {/* Custom Close Button */}
+    <button
+      onClick={() => setShowModal(false)}
+      className="custom-close-btn"
+      style={{
+        position: 'absolute',
+        top: '8px',
+        right: '12px',
+        border: 'none',
+        background: 'transparent',
+        fontSize: '1.5rem',
+        color: '#000',
+        cursor: 'pointer',
+      }}
+    >
+      &times;
+    </button>
+  </Modal.Header>
+
+
         <Modal.Body 
           style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
           onTouchStart={handleTouchStart}
@@ -331,135 +370,12 @@ function Protocol() {
               src={selectedDoc} 
               title={modalTitle} 
               width="100%" 
-              height="500px" 
-              style={{ border: 'none', display: 'block' }} 
+              height="600px" 
+              style={{ border: 'none'}} 
             />
           )}
         </Modal.Body>
       </Modal>
-
-      <style>{`
-        .section_protocol {
-          background: linear-gradient(90deg, rgb(175, 242, 252), #ffffff);
-          scroll-margin-top: 50px;
-          min-height: 100vh; /* Adjusted for navbar height */
-          height: auto;
-          padding-left: 10px;
-          padding-right: 10px;
-          overflow-x: hidden;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-        }
-        .modal-header .btn-close {
-          margin-right: auto; /* Move the close button to the left */
-          position: relative;
-          left: 0;
-        }
-        
-        .fruit-card {
-          width:100%;
-          padding: 5px;
-          max-width: 240px;
-          height: 180px;
-          border-radius: 12px;
-          overflow: hidden;
-          color: black;
-          font-size: 1.5rem;
-          font-weight: bold;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .fruit-card:hover {
-          transform: scale(1.05);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-          .fruit-image {
-            padding: 5px; /* Reduce padding around the image */
-          }
-        .fruit-image img {
-          width: 90px;
-          height: 90px;
-          object-fit: contain;
-          transition: transform 0.3s ease-in-out;
-        }
-        .fruit-card:hover .fruit-image img {
-          transform: scale(1.1);
-        }
-          .fruit-card .card-body {
-          padding: 5px; /* Reduce padding inside the card body */
-        }
-          .fruit-card-title {
-          white-space: normal;
-          overflow: break-word;
-          font-size: 1rem;
-      }
-                    .fruit-card .card-body .card-title {
-            font-size: 1rem; /* Reduce font size for the title */
-            margin-top: 5px; /* Reduce space between image and title */
-          }
-          .dropdown-menu{
-          width: 100%;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-          .fruit-card {
-            width: 200px;
-            height: 150px;
-            font-size: 1.2rem;
-          }
-          .fruit-image img {
-            width: 80px;
-            height: 80px;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .fruit-card {
-            width: 160px;
-            height: 120px;
-            font-size: 1rem;
-          }
-          .fruit-image img {
-            width: 60px;
-            height: 60px;
-          }
-        }
-
-        @media (max-width: 575px) and (min-width: 530px) {
-  .row.g-4 {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns */
-    gap: 15px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-}
-  @media (max-width: 529px){
-  .row.g-4 {
-    display: grid !important;
-    grid-template-columns: repeat (2, 1fr) !important;
-    gap: 10px !important;
-    margin: 0 !important;
-    padding: 0 10-xx !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-  }
-    .card{
-    width: 100% !important;
-    box-sizing: border-box !important;
-    }
-    body, html {
-    overflow-x: hidden !important;
-    }
-    }
-
-      `}</style>
     </section>
   );
 }
