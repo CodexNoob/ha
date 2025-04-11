@@ -300,84 +300,89 @@ function Protocol() {
       </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg" backdrop="static" keyboard={false}>
-      <Modal.Header className="d-flex align-items-center justify-content-between flex-wrap">
-  {/* Dropdown */}
-  {selectedFruit?.docs && (
-    <Dropdown className="me-2 mb-2 mb-sm-0">
-      <Dropdown.Toggle variant="secondary" size="sm" style={{ fontSize: '0.85rem' }}>
-        {selectedFruit.name.toUpperCase()} PROTOCOLS
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {selectedFruit.docs.map((pdf, index) => (
-          <Dropdown.Item
-            key={index}
-            onClick={() => handleDocSelection(pdf)}
-            style={{
-              fontSize: '0.85rem',
-              whiteSpace: 'normal',
-              textAlign: 'center',
-              borderBottom: '1px solid #ccc',
-              paddingBottom: '6px',
-              marginBottom: '6px',
-            }}
-          >
-            {pdf.name}
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
+  <Modal.Header className="d-flex align-items-center justify-content-between flex-wrap">
+    {/* Dropdown */}
+    {selectedFruit?.docs && (
+      <Dropdown className="me-2 mb-2 mb-sm-0">
+        <Dropdown.Toggle variant="secondary" size="sm" style={{ fontSize: '0.85rem' }}>
+          {selectedFruit.name.toUpperCase()} PROTOCOLS
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          {selectedFruit.docs.map((pdf, index) => (
+            <Dropdown.Item
+              key={index}
+              onClick={() => handleDocSelection(pdf)}
+              style={{
+                fontSize: '0.85rem',
+                whiteSpace: 'normal',
+                textAlign: 'center',
+                borderBottom: '1px solid #ccc',
+                paddingBottom: '6px',
+                marginBottom: '6px',
+              }}
+            >
+              {pdf.name}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
+    )}
+
+    {/* Title */}
+    <Modal.Title
+      className="flex-grow-1 text-center"
+      style={{
+        whiteSpace: 'pre-line',
+        fontSize: '1.1rem',
+        fontWeight: '500',
+        margin: '0 auto',
+      }}
+    >
+      {modalTitle}
+    </Modal.Title>
+
+    {/* Close button */}
+    <button
+      onClick={() => setShowModal(false)}
+      className="custom-close-btn"
+      style={{
+        border: 'none',
+        background: 'transparent',
+        fontSize: '1.5rem',
+        color: '#000',
+        marginLeft: 'auto',
+      }}
+    >
+      &times;
+    </button>
+  </Modal.Header>
+  <Modal.Body
+  style={{
+    height: '75vh',
+    overflow: 'hidden',
+    padding: 0,
+  }}
+  onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}
+>
+  {selectedDoc ? (
+    <iframe
+      src={selectedDoc}
+      title="Protocol PDF Viewer"
+      width="100%"
+      height="100%"
+      style={{
+        border: 'none',
+      }}
+    />
+  ) : (
+    <p className="text-center my-5">No document selected.</p>
   )}
+</Modal.Body>
 
-  {/* Title */}
-  <Modal.Title
-    className="flex-grow-1 text-center"
-    style={{
-      whiteSpace: 'pre-line',
-      fontSize: '1.1rem',
-      fontWeight: '500',
-      margin: '0 auto',
-    }}
-  >
-    {modalTitle}
-  </Modal.Title>
+</Modal>
 
-  {/* Close button */}
-  <button
-    onClick={() => setShowModal(false)}
-    className="custom-close-btn"
-    style={{
-      border: 'none',
-      background: 'transparent',
-      fontSize: '1.5rem',
-      color: '#000',
-      marginLeft: 'auto',
-    }}
-  >
-    &times;
-  </button>
-</Modal.Header>
-
-
-
-
-
-        <Modal.Body 
-          style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd} 
-        >
-          {selectedDoc && ( 
-            <iframe 
-              src={selectedDoc} 
-              title={modalTitle} 
-              width="100%" 
-              height="600px" 
-              style={{ border: 'none'}} 
-            />
-          )}
-        </Modal.Body>
-      </Modal>
     </section>
   );
 }
