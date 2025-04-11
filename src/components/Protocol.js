@@ -66,7 +66,7 @@ const fruits = [
     name: 'Corn', 
     image: img2, 
     docs: [
-      { name: 'Protocol for Corn', url: corn }
+      { name: 'Protocol for Corn Using Masinag Organic', url: corn }
     ]
   },
   { 
@@ -213,6 +213,7 @@ function Protocol() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
 
+
   useEffect(() => {
     document.documentElement.style.overflow = showModal ? 'hidden' : 'auto';
     return () => { document.documentElement.style.overflow = 'auto'; };
@@ -299,64 +300,65 @@ function Protocol() {
       </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg" backdrop="static" keyboard={false}>
-  <Modal.Header className="d-flex justify-content-center w-100 position-relative">
-    {selectedFruit?.docs && (
-      <Dropdown className="me-auto">
-        <Dropdown.Toggle variant="secondary" size="sm" style={{ fontSize: '0.85rem' }}>
-  {selectedFruit.name.toUpperCase()} PROTOCOLS
-</Dropdown.Toggle>
+      <Modal.Header className="d-flex align-items-center justify-content-between flex-wrap">
+  {/* Dropdown */}
+  {selectedFruit?.docs && (
+    <Dropdown className="me-2 mb-2 mb-sm-0">
+      <Dropdown.Toggle variant="secondary" size="sm" style={{ fontSize: '0.85rem' }}>
+        {selectedFruit.name.toUpperCase()} PROTOCOLS
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        {selectedFruit.docs.map((pdf, index) => (
+          <Dropdown.Item
+            key={index}
+            onClick={() => handleDocSelection(pdf)}
+            style={{
+              fontSize: '0.85rem',
+              whiteSpace: 'normal',
+              textAlign: 'center',
+              borderBottom: '1px solid #ccc',
+              paddingBottom: '6px',
+              marginBottom: '6px',
+            }}
+          >
+            {pdf.name}
+          </Dropdown.Item>
+        ))}
+      </Dropdown.Menu>
+    </Dropdown>
+  )}
 
-        <Dropdown.Menu>
-          {selectedFruit.docs.map((pdf, index) => (
-            <Dropdown.Item
-  key={index}
-  onClick={() => handleDocSelection(pdf)}
-  style={{
-    fontSize: '0.85rem',
-    whiteSpace: 'normal',
-    textAlign: 'center',
-    borderBottom: '1px solid #ccc',
-    paddingBottom: '6px',
-    marginBottom: '6px',
-  }}
->
-  {pdf.name}
-</Dropdown.Item>
+  {/* Title */}
+  <Modal.Title
+    className="flex-grow-1 text-center"
+    style={{
+      whiteSpace: 'pre-line',
+      fontSize: '1.1rem',
+      fontWeight: '500',
+      margin: '0 auto',
+    }}
+  >
+    {modalTitle}
+  </Modal.Title>
 
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
-    )}
-    <div className="w-100 text-center">
-      <Modal.Title
-        style={{
-          whiteSpace: 'pre-line',
-          textAlign: 'center',
-          fontSize: '1.3rem',
-          fontWeight: 'medium',
-        }}
-      >
-        {modalTitle}
-      </Modal.Title>
-    </div>
-    {/* Custom Close Button */}
-    <button
-      onClick={() => setShowModal(false)}
-      className="custom-close-btn"
-      style={{
-        position: 'absolute',
-        top: '8px',
-        right: '12px',
-        border: 'none',
-        background: 'transparent',
-        fontSize: '1.5rem',
-        color: '#000',
-        cursor: 'pointer',
-      }}
-    >
-      &times;
-    </button>
-  </Modal.Header>
+  {/* Close button */}
+  <button
+    onClick={() => setShowModal(false)}
+    className="custom-close-btn"
+    style={{
+      border: 'none',
+      background: 'transparent',
+      fontSize: '1.5rem',
+      color: '#000',
+      marginLeft: 'auto',
+    }}
+  >
+    &times;
+  </button>
+</Modal.Header>
+
+
+
 
 
         <Modal.Body 
