@@ -210,6 +210,7 @@ function Protocol() {
   const [showModal, setShowModal] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
 
   useEffect(() => {
     document.documentElement.style.overflow = showModal ? 'hidden' : 'auto';
@@ -233,16 +234,19 @@ function Protocol() {
   const handleTouchStart = (e) => {
     setTouchStartX(e.changedTouches[0].clientX);
   };
-  
-  const handleTouchEnd = (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    e.preventDefault();
 
-    if (touchStartX - touchEndX > 75) {
-      // Swipe left - can be implemented with additional functionality
-    } else if (touchEndX - touchStartX > 75) {
-      setShowModal(false);
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const diffX = touchEndX - touchStartX;
+    if (diffX > 75) {
+      setShowModal(false); // Swipe right to close
     }
+    setTouchStartX(null);
+    setTouchEndX(null);
   };
 
   return (
@@ -319,8 +323,8 @@ function Protocol() {
         <Modal.Body 
           style={{ padding: 0, overflow: 'auto', maxHeight: '80vh' }} 
           onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-          onTouchMove={(e) => e.preventDefault()} // Prevent default swipe behavior
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd} 
         >
           {selectedDoc && ( 
             <iframe 

@@ -165,14 +165,20 @@ function Product({ darkMode }) {
           color: #fff !important;
         }
         
-        // @media (min-width: 1001px) and (max-width: 1800px) {
-        //   .product-section {
-        //     padding-bottom: 150px; /* Ensure consistent padding for this range */
-        //     }
-        //     .product-content{
-        //     gap: 50px;
-        //     }
-        // }
+        @media (min-width: 1001px) and (max-width: 1050px) {
+          .product-section {
+            padding-bottom: 150px; /* Ensure consistent padding for this range */
+            }
+            .product-content{
+            gap: 50px;
+            }
+        .features-benefits-container {
+          display: flex;
+          justify-content: flex-start;
+          gap: 20px;
+          max-width: 800px;
+        }
+        }
 
         @media (min-width: 1001px) {
           .product-img {

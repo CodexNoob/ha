@@ -155,7 +155,7 @@ return (
       {isLightboxOpen && (
         <div className="lightbox" onClick={closeLightbox}>
           <button className="close-btn" onClick={closeLightbox}>
-            <FontAwesomeIcon icon={faTimes} />
+            <FontAwesomeIcon icon={faTimes} style={{ color: "white" }} />
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button className="nav-btn left" onClick={prevImage}>
@@ -279,10 +279,12 @@ return (
   max-height: 85vh;
   padding: 10px;
   min-width: 60vw;
-  min-height: 50vh;
-  object-fit: cover;
+  min-height: 60vh;
+  object-fit: contain;
   border-radius: 5px;
+  background: transparent;
 }
+
 
 /* Navigation Buttons */
 .nav-btn {
