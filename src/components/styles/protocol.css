@@ -201,3 +201,19 @@
     color: rgb(179, 172, 172);
     transform: scale(1.2);
 }
+
+/* Add this in your CSS file */
+.custom-dropdown {
+    z-index: 1050; /* Ensure the dropdown appears on top */
+    position: relative;
+  }
+  
+/* Add this in your CSS (tailwind or external) for the zoom effect */
+.zoom {
+    transition: transform 0.3s ease-in-out;
+    cursor: zoom-in;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* Scale factor for zoom */
+  }

@@ -22,35 +22,31 @@ import img17 from '../assets/certificate/protocolthumb/garlic-removebg-preview.p
 import img18 from '../assets/certificate/protocolthumb/watermelon-removebg-preview.png'
 
 // PDF
-import cashew from '../assets/certificate/protocol/Cashew.pdf';
-import cashew1 from '../assets/certificate/protocol/Cashew1.pdf';
-import corn from '../assets/certificate/protocol/Corn.pdf';
-import rice from '../assets/certificate/protocol/LowlandRiceProduction.pdf';
-import rice1 from '../assets/certificate/protocol/ProtocolforBroadcastedRice.pdf';
-import rice2 from '../assets/certificate/protocol/ProtocolforTransplantedRice.pdf';
-import rice3 from '../assets/certificate/protocol/NewProtocolforRice.pdf';
-import coffee from '../assets/certificate/protocol/HOWTOUSEMASINAGCOFFEETREE.pdf';
-import dragonf from '../assets/certificate/protocol/DragonFruit.pdf';
-import calamansi from '../assets/certificate/protocol/Calamansi.pdf';
-import castorbean from '../assets/certificate/protocol/CastorBean.pdf';
-import fruit3 from '../assets/certificate/protocol/FRUITTREESusing.pdf';
-import coconut from '../assets/certificate/protocol/Coconut.pdf';
-import leafyvege from '../assets/certificate/protocol/LEAFYVEGETABLES.pdf';
-import mango from '../assets/certificate/protocol/MANGOTREES.pdf';
-import onion from '../assets/certificate/protocol/onion.pdf';
-import ratooning from '../assets/certificate/protocol/Ratooning.pdf';
-import fishpond from '../assets/certificate/protocol/Fish.pdf';
-import fishpond1 from '../assets/certificate/protocol/FishCulture.pdf';
-import sweetpepper from '../assets/certificate/protocol/SweetPepper.pdf';
-import varvege from '../assets/certificate/protocol/VariousVegetables.pdf';
-import garlic from '../assets/certificate/protocol/Garlic.pdf';
-import watermelon from '../assets/certificate/protocol/WATERMELON-DirectSeeding.pdf';
-import watermelon1 from '../assets/certificate/protocol/WATERMELON-Transplanting.pdf';
-
-
-// PDF Rendering Component
-
-
+import cashew from '../assets/certificate/protocol/Cashew.pdf.jpg';
+import cashew1 from '../assets/certificate/protocol/Cashew1.pdf.jpg';
+import corn from '../assets/certificate/protocol/Corn.pdf.jpg';
+import rice from '../assets/certificate/protocol/LowlandRiceProduction.pdf.jpg';
+import rice1 from '../assets/certificate/protocol/ProtocolforBroadcastedRice.pdf.jpg';
+import rice2 from '../assets/certificate/protocol/ProtocolforTransplantedRice.pdf.jpg';
+import rice3 from '../assets/certificate/protocol/NewProtocolforRice.pdf.jpg';
+import coffee from '../assets/certificate/protocol/HOWTOUSEMASINAGCOFFEETREE.pdf.jpg';
+import dragonf from '../assets/certificate/protocol/DragonFruit.pdf.jpg';
+import calamansi from '../assets/certificate/protocol/Calamansi.pdf.jpg';
+import castorbean from '../assets/certificate/protocol/CastorBean/1.jpg';
+import fruit3 from '../assets/certificate/protocol/FRUITTREESusing.pdf.jpg';
+import coconut from '../assets/certificate/protocol/Coconut.pdf.jpg';
+import leafyvege from '../assets/certificate/protocol/LEAFYVEGETABLES.pdf.jpg';
+import mango from '../assets/certificate/protocol/MANGOTREES.pdf.jpg';
+import onion from '../assets/certificate/protocol/onion.pdf.jpg';
+import ratooning from '../assets/certificate/protocol/Ratooning.pdf.jpg';
+import fishpond from '../assets/certificate/protocol/Fish/1.jpg';
+import fishpond1 from '../assets/certificate/protocol/FishCulture/1.jpg';
+import sweetpepper from '../assets/certificate/protocol/SweetPepper/1.jpg';
+import varvege from '../assets/certificate/protocol/VariousVegetables.pdf.jpg';
+import garlic from '../assets/certificate/protocol/Garlic.pdf.jpg';
+import watermelon from '../assets/certificate/protocol/WATERMELON-DirectSeeding/1.jpg';
+import watermelon1 from '../assets/certificate/protocol/WATERMELON-Transplanting/1.jpg';
+ 
 const fruits = [
   { 
     id: 1, 
@@ -74,10 +70,10 @@ const fruits = [
     name: 'Rice', 
     image: img3, 
     docs: [
-      { name: 'Protocol for Lowland Rice Production', url: rice },
+      { name: 'Protocol for Lowland Rice Production Using Masinag Organic', url: rice },
       { name: 'Protocol for Broadcasted Rice \n Using Masinag Fertilizer', url: rice1},
       { name: 'Protocol for Transplanted Rice \n Using Masinag Fertilizer', url: rice2 },
-      { name: 'New Protocol for Rice', url: rice3 }
+      { name: 'New Protocol for Rice Using Masinag Organic', url: rice3 }
     ]
   },
   { 
@@ -85,7 +81,7 @@ const fruits = [
     name: 'Coffee Tree', 
     image: img4, 
     docs: [
-      { name: 'Protocol for Coffee Tree', url: coffee }
+      { name: 'Protocol for Coffee Tree Using Masinag Organic', url: coffee }
     ]
   },
   { 
@@ -93,7 +89,7 @@ const fruits = [
     name: 'Dragon Fruit', 
     image: img5, 
     docs: [
-      { name: 'Protocol For Dragon Fruit Tree', url: dragonf}
+      { name: 'Protocol For Dragon Fruit Tree Using Masinag Organic', url: dragonf}
     ]
   },
   { 
@@ -101,7 +97,7 @@ const fruits = [
     name: 'Calamansi', 
     image: img6, 
     docs: [
-      { name: 'Protocol For Calamansi Tree', url: calamansi }
+      { name: 'Protocol For Calamansi Tree Using Masinag Organic', url: calamansi }
     ]
   },
   { 
@@ -109,7 +105,7 @@ const fruits = [
     name: 'CastorBean', 
     image: img7, 
     docs: [
-      { name: 'Protocol For Castor Bean', url: castorbean }
+      { name: 'Protocol For Castor Bean Using Masinag Organic', url: castorbean }
     ]
   },
   { 
@@ -117,7 +113,7 @@ const fruits = [
     name: "Fruit Tree's", 
     image: img8, 
     docs: [
-      { name: "Protocol for Fruit Tree's", url: fruit3 }
+      { name: "Protocol for Fruit Tree's Using Masinag Organic", url: fruit3 }
     ]
   },
   { 
@@ -125,7 +121,7 @@ const fruits = [
     name: 'Coconut', 
     image: img9, 
     docs: [
-      { name: 'Protocol for Coconut Tree', url: coconut }
+      { name: 'Protocol for Coconut Tree Using Masinag Organic', url: coconut }
     ]
   },
   { 
@@ -133,7 +129,7 @@ const fruits = [
     name: "Leafy Vegetable's", 
     image: img10, 
     docs: [
-      { name: "Protocol for Leafy Vegetable's", url: leafyvege }
+      { name: "Protocol for Leafy Vegetable's Using Masinag Organic", url: leafyvege }
     ]
   },
   { 
@@ -141,7 +137,7 @@ const fruits = [
     name: "Mango Tree's", 
     image: img11, 
     docs: [
-      { name: "Protocol for Mango Tree's", url: mango }
+      { name: "Protocol for Mango Tree's Using Masinag Organic", url: mango }
     ]
   },
   { 
@@ -149,7 +145,7 @@ const fruits = [
     name: 'Onion', 
     image: img12, 
     docs: [
-      { name: 'Protocol for Onion', url: onion }
+      { name: 'Protocol for Onion Using Masinag Organic', url: onion }
     ]
   },
   { 
@@ -157,7 +153,7 @@ const fruits = [
     name: 'Ratooning', 
     image: img13, 
     docs: [
-      { name: 'Protocol for Ratooning', url: ratooning }
+      { name: 'Protocol for Ratooning Using Masinag Organic', url: ratooning }
     ]
   },
   { 
@@ -165,8 +161,8 @@ const fruits = [
     name: 'Fish Pond', 
     image: img14, 
     docs: [
-      { name: 'Protocol for Fish Pond', url: fishpond },
-      { name: 'Protocol for Fish Culture', url: fishpond1 }
+      { name: 'Protocol for Fish Pond Using Masinag Organic', url: fishpond },
+      { name: 'Protocol for Fish Culture Using Masinag Organic', url: fishpond1 }
     ]
   },
   { 
@@ -174,7 +170,7 @@ const fruits = [
     name: 'Sweet Pepper', 
     image: img15, 
     docs: [
-      { name: 'Protocol for Sweet Pepper', url: sweetpepper }
+      { name: 'Protocol for Sweet Pepper Using Masinag Organic', url: sweetpepper }
     ]
   },
   { 
@@ -182,7 +178,7 @@ const fruits = [
     name: "Various Vegetable's", 
     image: img16, 
     docs: [
-      { name: "Protocol for Various Vegetable's", url: varvege }
+      { name: "Protocol for Various Vegetable's Using Masinag Organic", url: varvege }
     ]
   },
   { 
@@ -190,7 +186,7 @@ const fruits = [
     name: 'Garlic', 
     image: img17, 
     docs: [
-      { name: 'Protocol for Garlic', url: garlic }
+      { name: 'Protocol for Garlic Using Masinag Organic', url: garlic }
     ]
   },
   { 
@@ -198,8 +194,8 @@ const fruits = [
     name: 'Watermelon', 
     image: img18, // added leading slash
     docs: [
-      { name: 'Protocol for \n WATERMELON - Direct Seeding', url: watermelon },
-      { name: 'Protocol for \n WATERMELON - Transplanted', url: watermelon1 }
+      { name: 'Protocol for \n WATERMELON - Direct Seeding Using Masinag Organic', url: watermelon },
+      { name: 'Protocol for \n WATERMELON - Transplanted Using Masinag Organic', url: watermelon1 }
     ]
   }
 ];
@@ -212,11 +208,23 @@ function Protocol() {
   const [showAll, setShowAll] = useState(false);
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
+  const [numPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
+
+  const handleNextPage = () => {
+    setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
+  };
+
+  const handlePrevPage = () => {
+    setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
+  };
 
   useEffect(() => {
     document.documentElement.style.overflow = showModal ? 'hidden' : 'auto';
-    return () => { document.documentElement.style.overflow = 'auto'; };
+    return () => {
+      document.documentElement.style.overflow = 'auto';
+    };
   }, [showModal]);
 
   const handleFruitClick = (fruit) => {
@@ -224,6 +232,7 @@ function Protocol() {
     if (fruit.docs && fruit.docs.length > 0) {
       setSelectedDoc(fruit.docs[0].url);
       setModalTitle(fruit.docs[0].name);
+      setPageNumber(1);
     }
     setShowModal(true);
   };
@@ -231,6 +240,7 @@ function Protocol() {
   const handleDocSelection = (pdf) => {
     setSelectedDoc(pdf.url);
     setModalTitle(pdf.name);
+    setPageNumber(1);
   };
 
   const handleTouchStart = (e) => {
@@ -245,7 +255,7 @@ function Protocol() {
     if (!touchStartX || !touchEndX) return;
     const diffX = touchEndX - touchStartX;
     if (diffX > 75) {
-      setShowModal(false); // Swipe right to close
+      setShowModal(false);
     }
     setTouchStartX(null);
     setTouchEndX(null);
@@ -310,78 +320,96 @@ function Protocol() {
         <Dropdown.Menu>
           {selectedFruit.docs.map((pdf, index) => (
             <Dropdown.Item
-              key={index}
-              onClick={() => handleDocSelection(pdf)}
-              style={{
-                fontSize: '0.85rem',
-                whiteSpace: 'normal',
-                textAlign: 'center',
-                borderBottom: '1px solid #ccc',
-                paddingBottom: '6px',
-                marginBottom: '6px',
-              }}
-            >
-              {pdf.name}
-            </Dropdown.Item>
+            key={index}
+            onClick={() => handleDocSelection(pdf)}
+            style={{
+              fontSize: '0.85rem',
+              whiteSpace: 'normal',
+              textAlign: 'left',
+              lineHeight: '1.2',
+              maxWidth: '300px',
+              wordBreak: 'break-word',
+              overflowWrap: 'break-word',
+            }}
+          >
+          {pdf.name.split('\n').map((line, i) => (
+    <span key={i}>
+      {line}
+      <br />
+    </span>
+  ))}
+          </Dropdown.Item>          
           ))}
-        </Dropdown.Menu>
+                </Dropdown.Menu>
       </Dropdown>
     )}
 
-    {/* Title */}
-    <Modal.Title
-      className="flex-grow-1 text-center"
-      style={{
-        whiteSpace: 'pre-line',
-        fontSize: '1.1rem',
-        fontWeight: '500',
-        margin: '0 auto',
-      }}
-    >
-      {modalTitle}
-    </Modal.Title>
-
-    {/* Close button */}
+    {/* Modal Close Button */}
     <button
-      onClick={() => setShowModal(false)}
-      className="custom-close-btn"
-      style={{
-        border: 'none',
-        background: 'transparent',
-        fontSize: '1.5rem',
-        color: '#000',
-        marginLeft: 'auto',
-      }}
-    >
-      &times;
-    </button>
-  </Modal.Header>
-  <Modal.Body
+  onClick={() => setShowModal(false)}
+  className="btn-close"
+  aria-label="Close"
   style={{
-    height: '75vh',
-    overflow: 'hidden',
-    padding: 0,
+    filter: 'none',
+    boxShadow: 'none',
+    outline: 'none',
+    backgroundColor: 'transparent',
   }}
+></button>
+  </Modal.Header>
+
+  <Modal.Body
   onTouchStart={handleTouchStart}
   onTouchMove={handleTouchMove}
   onTouchEnd={handleTouchEnd}
+  style={{
+    maxHeight: '90vh',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    padding: '1rem',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }}
 >
-  {selectedDoc ? (
-    <iframe
-      src={selectedDoc}
-      title="Protocol PDF Viewer"
-      width="100%"
-      height="100%"
-      style={{
-        border: 'none',
-      }}
-    />
-  ) : (
-    <p className="text-center my-5">No document selected.</p>
+
+  {selectedDoc && (
+    <div className="d-flex justify-content-center">
+    <img
+  src={selectedDoc}
+  alt="Protocol Document"
+  style={{
+    width: '100%',
+    height: 'auto',
+    maxWidth: '100%',
+    objectFit: 'contain',
+  }}
+/>
+</div>
   )}
 </Modal.Body>
 
+
+  <Modal.Footer className="justify-content-between">
+    <button
+      onClick={handlePrevPage}
+      className="btn btn-outline-secondary btn-sm"
+      disabled={pageNumber === 1}
+    >
+      Previous
+    </button>
+    <span style={{ fontSize: '0.9rem' }}>{modalTitle}</span>
+    <button
+      onClick={handleNextPage}
+      className="btn btn-outline-secondary btn-sm"
+      disabled={numPages && pageNumber === numPages}
+    >
+      Next
+    </button>
+  </Modal.Footer>
 </Modal>
+
 
     </section>
   );
