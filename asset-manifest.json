@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ha/static/css/main.9ee4863b.css",
-    "main.js": "/ha/static/js/main.5f5c1524.js",
+    "main.js": "/ha/static/js/main.550e4e51.js",
     "static/media/Rose sprayed with Masinag.JPG": "/ha/static/media/Rose sprayed with Masinag.929baaf38294d6cd960f.JPG",
     "static/media/Rose sprayed with Masinag 2.JPG": "/ha/static/media/Rose sprayed with Masinag 2.620c801f307783392bc7.JPG",
     "static/media/Rose sprayed with Masinag 3.JPG": "/ha/static/media/Rose sprayed with Masinag 3.6eb3416233edd92f602c.JPG",
@@ -110,10 +110,10 @@
     "static/media/fa-v4compatibility.woff2": "/ha/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/ha/index.html",
     "main.9ee4863b.css.map": "/ha/static/css/main.9ee4863b.css.map",
-    "main.5f5c1524.js.map": "/ha/static/js/main.5f5c1524.js.map"
+    "main.550e4e51.js.map": "/ha/static/js/main.550e4e51.js.map"
   },
   "entrypoints": [
     "static/css/main.9ee4863b.css",
-    "static/js/main.5f5c1524.js"
+    "static/js/main.550e4e51.js"
   ]
 }
