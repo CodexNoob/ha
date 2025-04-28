@@ -56,7 +56,7 @@ function Certificate() {
     <section className="certificate-section" id="certificate">
       <Container>
         <h1 className="text-center">Certificates</h1>
-              <Row className="justify-content-center g-3">
+              <Row className="justify-content-center g-4">
         {certificates.map((certificate) => (
           <Col key={certificate.id} xs={6} md={4} lg={4} className="d-flex justify-content-center">
             <div className="certificate-card" onClick={() => handleCertificateClick(certificate)}>

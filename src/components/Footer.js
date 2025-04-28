@@ -29,7 +29,6 @@ function Footer() {
         <section className="container text-center mt-4">
           <div className="footer-columns">
             <div className="footer-col">
-              <h6 className="text-uppercase fw-bold mb-2" style={{fontSize: "20px"}}>HANFORD</h6>
               <div className="mission-vision-wrapper">
                 <div className="mission-vision">
                   <p>
@@ -66,7 +65,7 @@ function Footer() {
         </section>
 
         <div className="text-center p-3 text-white" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-          <p>© 2025 All Rights Reserved By <strong>HANFORD</strong></p>
+          <p>© 2025 All Rights Reserved By <strong>1CV</strong></p>
         </div>
       </footer>
     </>
