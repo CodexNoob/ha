@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ha/static/css/main.fd022216.css",
-    "main.js": "/ha/static/js/main.b1af7cc4.js",
+    "main.css": "/ha/static/css/main.9ee4863b.css",
+    "main.js": "/ha/static/js/main.06d79931.js",
     "static/media/Rose sprayed with Masinag.JPG": "/ha/static/media/Rose sprayed with Masinag.929baaf38294d6cd960f.JPG",
     "static/media/Rose sprayed with Masinag 2.JPG": "/ha/static/media/Rose sprayed with Masinag 2.620c801f307783392bc7.JPG",
     "static/media/Rose sprayed with Masinag 3.JPG": "/ha/static/media/Rose sprayed with Masinag 3.6eb3416233edd92f602c.JPG",
@@ -109,11 +109,11 @@
     "static/media/IDCP.jpg": "/ha/static/media/IDCP.d6e15d5f673df27dcb23.jpg",
     "static/media/fa-v4compatibility.woff2": "/ha/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/ha/index.html",
-    "main.fd022216.css.map": "/ha/static/css/main.fd022216.css.map",
-    "main.b1af7cc4.js.map": "/ha/static/js/main.b1af7cc4.js.map"
+    "main.9ee4863b.css.map": "/ha/static/css/main.9ee4863b.css.map",
+    "main.06d79931.js.map": "/ha/static/js/main.06d79931.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd022216.css",
-    "static/js/main.b1af7cc4.js"
+    "static/css/main.9ee4863b.css",
+    "static/js/main.06d79931.js"
   ]
 }
