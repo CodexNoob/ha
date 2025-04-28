@@ -267,7 +267,7 @@ function Protocol() {
       <p className="text-center">Select a fruit to view its protocol document.</p>
       <Container fluid="sm">
         <Row className="g-4 justify-content-center">
-          {(showAll ? fruits : fruits.slice(0, 6)).map((fruit) => (
+          {(showAll ? fruits : fruits.slice(0, 8)).map((fruit) => (
             <Col key={fruit.id} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">
               <Card
                 className="fruit-card text-center p-3 shadow-sm"

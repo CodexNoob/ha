@@ -130,7 +130,7 @@ return (
 
       <div className="gallery-container">
         <div className="thumbs">
-          {(showAll ? images : images.slice(0, 4)).map((img, index) => (
+          {(showAll ? images : images.slice(0, 10)).map((img, index) => (
             <img key={index} src={img} alt="" onClick={(e) => openLightbox(index, e)} />
           ))}
         </div>
