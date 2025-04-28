@@ -30,21 +30,18 @@ function Product({ darkMode }) {
   
 
   return (
-    <section
-      ref={productRef}
-      className={`product-section ${darkMode ? "dark" : ""}`}
-      id="product"
-    >
-      <div className="product-content">
-        {/* Product Images with Slide-in Effect */}
-        <div className="product-images">
-          <img
-            src={ProductImage1}
-            alt="Organic Product 1"
-            className={`product-img ${isVisible ? "slide-in" : ""}`}
-            style={{ animationDelay: "0.3s" }} // First image appears first
-          />
-        </div>
+    <section id="product" ref={productRef} className={`scroll-mt-24 product-section ${darkMode ? "dark" : ""}`}>
+  <div className="product-content">
+    {/* Product Images with Slide-in Effect */}
+    <div className="product-images">
+      <img
+        src={ProductImage1}
+        alt="Organic Product 1"
+        className={`product-img ${isVisible ? "slide-in" : ""}`}
+        style={{ animationDelay: "0.3s" }}
+      />
+    </div>
+
 
         {/* Product Text */}
         <div className="product-text">

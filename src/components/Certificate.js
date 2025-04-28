@@ -55,7 +55,7 @@ function Certificate() {
   return (
     <section className="certificate-section" id="certificate">
       <Container>
-        <h1 className="text-center my-4">Certificates</h1>
+        <h1 className="text-center">Certificates</h1>
               <Row className="justify-content-center g-3">
         {certificates.map((certificate) => (
           <Col key={certificate.id} xs={6} md={4} lg={4} className="d-flex justify-content-center">

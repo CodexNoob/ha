@@ -23,19 +23,29 @@ function NavBar() {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     const navbar = document.querySelector(".navbar");
-    const navbarHeight = navbar ? navbar.offsetHeight : 80; // Get navbar height dynamically
-
+    const isMobile = window.innerWidth <= 992; // adjust based on your design
+    const navbarHeight = navbar ? navbar.offsetHeight : 80;
+  
     if (targetElement) {
-      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Get accurate position
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      const sectionsWithOffset = 
+      [
+      "product", 
+      "protocol", 
+      "gallery", 
+      "testimonial", 
+      "certificate"
+    ]; // Add your section IDs here
+      const extraOffset = isMobile && sectionsWithOffset.includes(targetId) ? -220 : 0; // Adjust this value as needed for desktop
       window.scrollTo({
-        top: elementPosition - navbarHeight - 20, // Adjust based on navbar height
+        top: elementPosition - navbarHeight - extraOffset, // smaller adjustment on mobile
         behavior: "smooth",
       });
     }
-
-    setExpanded(false); // Close navbar on mobile
+  
+    setExpanded(false);
   };
-
+  
   return (
     <Navbar
       fixed="top"
